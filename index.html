@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+    <link rel="stylesheet" href="css/jquery.ktip.css" />
+</head>
+<style type="text/css">
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    #demo {
+        width: 200px;
+        height: 150px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -75px;
+        margin-left: -100px;
+        background: #849214;
+        padding: 10px 20px 30px 40px;
+    }
+</style>
+<body>
+	<div id="demo"></div>
+</body>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.ktip.js"></script>
+<script type="text/javascript">
+var test = function(str) {
+    alert(str);
+}
+$(document).ready(function() {
+    var str = "<p>Hello world!!</p>"
+            + "<p>Hello world!!</p>";
+    $("#demo").ktip(str, {
+        direction: "top",
+        offset: 20,
+        theme: "vipzone",
+        atY: 20
+    });
+});
+</script>
+</html>
