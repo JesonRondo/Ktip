@@ -112,7 +112,7 @@
             }
             
             if (settings.closeBtn) {
-                var closebtn = $("<a>").attr("title", "关闭").addClass("close-ico").html("×");
+                var closebtn = $("<a>").addClass("close-ico").html("×");
                 closebtn.click(function() {
                     closeTip();
                 });

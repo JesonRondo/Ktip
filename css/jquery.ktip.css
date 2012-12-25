@@ -1,7 +1,7 @@
 /* default */
 .ktip-tipbox.default {
     background: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #333;
     padding: 8px 15px;
     position: absolute;
     z-index: 10000;
@@ -11,6 +11,7 @@
     border-radius: 2px;
     color: #666;
     display: none;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
 }
 .ktip-tipbox.default .ktip-tipbox-up {
     left: 50%;
@@ -38,7 +39,7 @@
     height: 12px;
 }
 .ktip-tipbox.default .ktip-tipbox-direction em {
-    color: #ccc;
+    color: #333;
 }
 .ktip-tipbox.default .ktip-tipbox-direction em,
 .ktip-tipbox.default .ktip-tipbox-direction span {
@@ -72,6 +73,10 @@
     font: normal 12px/12px 'SimSun';
     color: #999;
     text-align: center;
+    box-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 }
 .ktip-tipbox.default .close-ico:hover {
     color: #fff;
