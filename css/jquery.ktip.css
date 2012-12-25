@@ -1,17 +1,16 @@
 /* default */
 .ktip-tipbox.default {
-    background-color: #FFFFE9;
-    border: 1px solid #FFDE8E;
-    padding: 5px 16px 5px 8px;
-    margin: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 8px 15px;
     position: absolute;
-    z-index: 99999999;
-    font-size: 12px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+    z-index: 10000;
+    font: normal 12px/16px 'SimSun';
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    color: #666;
     display: none;
-    color: #8B8B8B;
 }
 .ktip-tipbox.default .ktip-tipbox-up {
     left: 50%;
@@ -21,7 +20,7 @@
 .ktip-tipbox.default .ktip-tipbox-down {
     left: 50%;
     margin-left: -7px;
-    bottom: 6px;
+    bottom: -7px;
 }
 .ktip-tipbox.default .ktip-tipbox-left {
     top: 50%;
@@ -31,23 +30,21 @@
 .ktip-tipbox.default .ktip-tipbox-right {
     top: 50%;
     margin-top: -6px;
-    right: 6px;
+    right: -7px;
 }
 .ktip-tipbox.default .ktip-tipbox-direction {
     position: absolute;
+    width: 12px;
+    height: 12px;
 }
 .ktip-tipbox.default .ktip-tipbox-direction em {
-    color: #FFDE8E;
-    font-style: normal;
+    color: #ccc;
 }
 .ktip-tipbox.default .ktip-tipbox-direction em,
 .ktip-tipbox.default .ktip-tipbox-direction span {
     height: 12px;
     width: 12px;
-    font-family: Simsun;
-    font-size: 12px;
-    line-height: 12px;
-    overflow: hidden;
+    font: normal 12px/12px 'SimSun';
     position: absolute;
 }
 .ktip-tipbox.default .ktip-tipbox-up span {
@@ -63,125 +60,31 @@
     left: -1px;
 }
 .ktip-tipbox.default .ktip-tipbox-direction span {
-    color: #FFFFE9;
+    color: #fff;
 }
 .ktip-tipbox.default .close-ico {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 2px;
+    right: 2px;
     display: block;
-    width: 11px;
-    height: 11px;
-    background: url(images/close.gif) 0 -11px no-repeat;
-    text-indent: -900px;
-    overflow: hidden;
+    width: 12px;
+    height: 12px;
+    font: normal 12px/12px 'SimSun';
+    color: #999;
+    text-align: center;
 }
 .ktip-tipbox.default .close-ico:hover {
-    background: url(images/close.gif) 0 0 no-repeat;
-}
-.ktip-tipbox.default .cntBox p {
-    margin: 2px;
+    color: #fff;
+    background: #37A;
+    text-decoration: none;
 }
 .ktip-tipbox.default a,
 .ktip-tipbox.default a:active {
+    color: #37A;
     text-decoration: none;
     cursor: pointer;
 }
 .ktip-tipbox.default a:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-/* vipzone */
-.ktip-tipbox.vipzone {
-    background: #E4E3E3 url(images/tip_vipzone.png) repeat-x 0 0;
-    border: 1px solid #C9C9C9;
-    padding: 5px 16px 5px 8px;
-    margin: 0;
-    position: absolute;
-    z-index: 99999999;
-    font-size: 12px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    display: none;
-    color: #8B8B8B;
-}
-.ktip-tipbox.vipzone .ktip-tipbox-up {
-    left: 50%;
-    margin-left: -7px;
-    top: -6px;
-}
-.ktip-tipbox.vipzone .ktip-tipbox-down {
-    left: 50%;
-    margin-left: -7px;
-    bottom: 6px;
-}
-.ktip-tipbox.vipzone .ktip-tipbox-left {
-    top: 50%;
-    margin-top: -7px;
-    left: -6px;
-}
-.ktip-tipbox.vipzone .ktip-tipbox-right {
-    top: 50%;
-    margin-top: -6px;
-    right: 6px;
-}
-.ktip-tipbox.vipzone .ktip-tipbox-direction {
-    position: absolute;
-}
-.ktip-tipbox.vipzone .ktip-tipbox-direction em {
-    color: #C9C9C9;
-    font-style: normal;
-}
-.ktip-tipbox.vipzone .ktip-tipbox-direction em,
-.ktip-tipbox.vipzone .ktip-tipbox-direction span {
-    height: 12px;
-    width: 12px;
-    font-family: Simsun;
-    font-size: 12px;
-    line-height: 12px;
-    overflow: hidden;
-    position: absolute;
-}
-.ktip-tipbox.vipzone .ktip-tipbox-up span {
-    top: 1px;
-}
-.ktip-tipbox.vipzone .ktip-tipbox-down span {
-    top: -1px;
-}
-.ktip-tipbox.vipzone .ktip-tipbox-left span {
-    left: 1px;
-}
-.ktip-tipbox.vipzone .ktip-tipbox-right span {
-    left: -1px;
-}
-.ktip-tipbox.vipzone .ktip-tipbox-direction span {
-    color: #FCFCFC;
-}
-.ktip-tipbox.vipzone .close-ico {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    display: block;
-    width: 11px;
-    height: 11px;
-    background: url(images/close.gif) 0 -33px no-repeat;
-    text-indent: -900px;
-    overflow: hidden;
-}
-.ktip-tipbox.vipzone .close-ico:hover {
-    background: url(images/close.gif) 0 -22px no-repeat;
-}
-.ktip-tipbox.vipzone .cntBox p {
-    margin: 2px;
-}
-.ktip-tipbox.vipzone a,
-.ktip-tipbox.vipzone a:active {
-    text-decoration: none;
-    cursor: pointer;
-}
-.ktip-tipbox.vipzone a:hover {
     text-decoration: underline;
     cursor: pointer;
 }

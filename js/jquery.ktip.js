@@ -3,8 +3,8 @@
         var settings = $.extend({
             direction: "down",      // 小箭头位于tip的位置
             theme    : "default",   // tips主题
-            atX      : 0,           // 位于目标的位置的x坐标，若为负，则与原点相对的位置为起始位置
-            atY      : 0,           // 位于目标的位置的y坐标，若为负，则与原点相对的位置为起始位置
+            atX      : 0,           // 位于目标的位置的x坐标，若为负，则与原点相对的位置为起始位置 偏差1px
+            atY      : 0,           // 位于目标的位置的y坐标，若为负，则与原点相对的位置为起始位置 偏差1px
             tipWidth : 0,           // tip宽度，可定制，小于等于0为不设宽度
             stick    : 0,           // tip保持毫秒速
             offset   : 15,          // 小箭头的偏移量
@@ -13,12 +13,7 @@
             hover    : false,       // hover模式，鼠标移走tip消失
             callback : null,        // 加载完后的回调函数
             zIndex   : null,        // z轴
-            closeCallback: null,    // 关闭后的回调函数 arg: $cntbox
-            ajax     : {
-                url     : "",   // ajax调用url
-                data    : null, // ajax数据
-                success : null  // ajax回调函数 arg: $cntbox, json
-            }
+            closeCallback: null     // 关闭后的回调函数 arg: $cntbox
         }, options);
         
         var $target = $(this);
@@ -54,7 +49,7 @@
 
             var atX, atY;
             
-            settings.atX >= 0 ? (atX = settings.atX) : (atX = atWidth + settings.atX);
+            settings.atX >= 0 ? (atX = settings.atX) : (atX = atWidth + settings.atX + 1);
             settings.atY >= 0 ? (atY = settings.atY) : (atY = atHeight + settings.atY);
 
             var adjustOffsetHandler = {
@@ -71,7 +66,7 @@
                     xtop = xtop - parseInt($tipbox.height(), 10) - 10 - 6 + atY;
                 }, 
                 "right" : function(){
-                    xleft = xleft - parseInt($tipbox.width(), 10) - 24 - 6 + atX;
+                    xleft = xleft - parseInt($tipbox.width(), 10) - 31 - 6 + atX;
                     xtop = xtop - parseInt(settings.offset, 10) + atY;
                     
                 }
@@ -89,9 +84,7 @@
                 }
             }
         
-            $tipbox.fadeOut("fast", function() {
-                $tipbox.remove();
-            });
+            $tipbox.remove();
         };
         
         var randerTip = function(){
@@ -119,7 +112,7 @@
             }
             
             if (settings.closeBtn) {
-                var closebtn = $("<a>").attr("title", "关闭").addClass("close-ico").html("关闭");
+                var closebtn = $("<a>").attr("title", "关闭").addClass("close-ico").html("×");
                 closebtn.click(function() {
                     closeTip();
                 });
@@ -138,34 +131,11 @@
             
             $("body").append($tipbox);
             adjustKtip();
-            //$tipbox.show();
-            $tipbox.fadeIn("normal");
-            
+            $tipbox.show();
             
             if (settings.callback !== null) {
                 try {
                     settings.callback($cntbox);
-                } catch (e) {
-                
-                }
-            }
-            
-            if (settings.ajax.success !== null) {
-                $cntbox.html($("<img>").attr("src", "css/images/loader.gif"));
-                
-                try {
-                    $.ajax({
-                        type     : "POST",
-                        url      : settings.ajax.url,
-                        data     : settings.ajax.data,
-                        cache    : false,
-                        async    : false,
-                        dataType : "json",
-                        success  : function(json) {
-                            $cntbox.html("");
-                            settings.ajax.success(json, $cntbox);
-                        }
-                    });
                 } catch (e) {
                 
                 }
